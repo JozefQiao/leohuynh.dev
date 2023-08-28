@@ -1,9 +1,9 @@
-import { getMDXComponent } from 'mdx-bundler/client'
-import { useMemo } from 'react'
-import type { MdxLayoutRendererProps } from '~/types'
-import { Image } from './Image'
-import { Link } from './Link'
-import { Pre } from './Pre'
+import { getMDXComponent } from "mdx-bundler/client"
+import { useMemo } from "react"
+import type { MdxLayoutRendererProps } from "~/types"
+import { Image } from "./Image"
+import { Link } from "./Link"
+import { Pre } from "./Pre"
 
 let MDXComponents = {
   Image,

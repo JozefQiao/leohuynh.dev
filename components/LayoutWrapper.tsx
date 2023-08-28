@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { MAIN_CONTENT_MIN_HEIGHT } from '~/constant'
-import { Footer } from './Footer'
-import { Header } from './Header'
-import { MobileNav } from './MobileNav'
+import { useState } from "react"
+import { MAIN_CONTENT_MIN_HEIGHT } from "~/constant"
+import { Footer } from "./Footer"
+import { Header } from "./Header"
+import { MobileNav } from "./MobileNav"
 
 export function LayoutWrapper({ children }) {
   let [navShow, setNavShow] = useState(false)

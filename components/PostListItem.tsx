@@ -1,7 +1,7 @@
-import type { MdxFrontMatter } from '~/types'
-import { formatDate } from '~/utils/date'
-import { Link } from './Link'
-import { Tag } from './Tag'
+import type { MdxFrontMatter } from "~/types"
+import { formatDate } from "~/utils/date"
+import { Link } from "./Link"
+import { Tag } from "./Tag"
 
 export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
   let { slug, date, title, summary, tags } = frontMatter

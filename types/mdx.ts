@@ -1,13 +1,13 @@
-import type readingTime from 'reading-time'
-import type { DevIconsMap } from '~/components/DevIcon'
+import type readingTime from "reading-time"
+import type { DevIconsMap } from "~/components/DevIcon"
 
 export type MdxPageLayout =
-  | 'AuthorLayout'
-  | 'ListLayout'
-  | 'PostLayout'
-  | 'PostSimple'
-  | 'ResumeLayout'
-  | 'SnippetLayout'
+  | "AuthorLayout"
+  | "ListLayout"
+  | "PostLayout"
+  | "PostSimple"
+  | "ResumeLayout"
+  | "SnippetLayout"
 
 export interface MdxFrontMatter {
   layout?: MdxPageLayout

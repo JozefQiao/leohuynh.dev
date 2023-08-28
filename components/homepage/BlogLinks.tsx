@@ -1,6 +1,6 @@
-import { siteMetadata } from '~/data/siteMetadata'
-import { Link } from '../Link'
-import { Twemoji } from '../Twemoji'
+import { siteMetadata } from "~/data/siteMetadata"
+import { Link } from "../Link"
+import { Twemoji } from "../Twemoji"
 
 export function BlogLinks() {
   return (

@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { AuthorSEO, BlogSeoProps, PageSeoProps } from '~/types'
+import Head from "next/head"
+import { useRouter } from "next/router"
+import { siteMetadata } from "~/data/siteMetadata"
+import type { AuthorSEO, BlogSeoProps, PageSeoProps } from "~/types"
 
 export function PageSeo({ title, description }: PageSeoProps) {
   let router = useRouter()
@@ -16,11 +16,6 @@ export function PageSeo({ title, description }: PageSeoProps) {
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={siteMetadata.twitter} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`} />
     </Head>
   )
 }
@@ -34,13 +29,13 @@ export function BlogSeo(props: BlogSeoProps) {
   let imagesArr =
     images.length === 0
       ? [siteMetadata.socialBanner]
-      : typeof images === 'string'
+      : typeof images === "string"
       ? [images]
       : images
 
   let featuredImages = imagesArr.map((img) => {
     return {
-      '@type': 'ImageObject',
+      "@type": "ImageObject",
       url: `${siteMetadata.siteUrl}${img}`,
     }
   })
@@ -49,23 +44,23 @@ export function BlogSeo(props: BlogSeoProps) {
   if (authorDetails) {
     authorList = authorDetails.map((author) => {
       return {
-        '@type': 'Person',
+        "@type": "Person",
         name: author.name,
       }
     })
   } else {
     authorList = {
-      '@type': 'Person',
+      "@type": "Person",
       name: siteMetadata.author,
     }
   }
 
   let structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
+    "@context": "https://schema.org",
+    "@type": "Article",
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': url,
+      "@type": "WebPage",
+      "@id": url,
     },
     headline: title,
     image: featuredImages,
@@ -73,10 +68,10 @@ export function BlogSeo(props: BlogSeoProps) {
     dateModified: modifiedAt,
     author: authorList,
     publisher: {
-      '@type': 'Organization',
+      "@type": "Organization",
       name: siteMetadata.author,
       logo: {
-        '@type': 'ImageObject',
+        "@type": "ImageObject",
         url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
       },
     },
@@ -97,18 +92,7 @@ export function BlogSeo(props: BlogSeoProps) {
         {featuredImages.map((img) => (
           <meta property="og:image" content={img.url} key={img.url} />
         ))}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={siteMetadata.twitter} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={summary} />
-        <meta name="twitter:image" content={featuredImages[0].url} />
-        {date && <meta property="article:published_time" content={publishedAt} />}
-        {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
-        <link rel="canonical" href={`${siteMetadata.siteUrl}${router.asPath}`} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData, null, 2) }}
-        />
+        =
       </Head>
     </>
   )

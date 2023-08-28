@@ -1,4 +1,4 @@
-import { siteMetadata } from '~/data/siteMetadata'
+import { siteMetadata } from "~/data/siteMetadata"
 
 export function AnalyticsLink() {
   return (
@@ -7,7 +7,7 @@ export function AnalyticsLink() {
       type="button"
       className="ml-1 rounded p-2 hover:bg-gray-200 dark:hover:bg-gray-700 sm:ml-2"
       data-umami-event="nav-analytics"
-      onClick={() => window.open(siteMetadata.analyticsURL, '_blank')}
+      onClick={() => window.open(siteMetadata.analyticsURL, "_blank")}
     >
       <svg
         role="img"

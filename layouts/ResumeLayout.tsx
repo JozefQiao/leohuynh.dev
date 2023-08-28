@@ -1,10 +1,10 @@
-import { PageSeo } from 'components/SEO'
-import { ScrollTopButton } from '~/components/ScrollTopButton'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { ResumeLayoutProps } from '~/types'
+import { PageSeo } from "components/SEO"
+import { ScrollTopButton } from "~/components/ScrollTopButton"
+import { siteMetadata } from "~/data/siteMetadata"
+import type { ResumeLayoutProps } from "~/types"
 
 export function ResumeLayout({ children }: ResumeLayoutProps) {
-  let description = 'My professional career, experience, and skills.'
+  let description = "My professional career, experience, and skills."
 
   return (
     <>

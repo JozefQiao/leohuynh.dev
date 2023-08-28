@@ -1,6 +1,6 @@
-import React from 'react'
-import Typed from 'typed.js'
-import { Twemoji } from '../Twemoji'
+import React from "react"
+import Typed from "typed.js"
+import { Twemoji } from "../Twemoji"
 
 export function TypedBios() {
   let el = React.useRef(null)
@@ -8,7 +8,7 @@ export function TypedBios() {
 
   React.useEffect(() => {
     typed.current = new Typed(el.current, {
-      stringsElement: '#bios',
+      stringsElement: "#bios",
       typeSpeed: 40,
       backSpeed: 10,
       loop: true,

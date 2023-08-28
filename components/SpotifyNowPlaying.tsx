@@ -1,9 +1,9 @@
-import type { SpotifyNowPlayingData } from '~/types'
-import { fetcher } from '~/utils/fetcher'
-const { default: useSWR } = require('swr')
+import type { SpotifyNowPlayingData } from "~/types"
+import { fetcher } from "~/utils/fetcher"
+const { default: useSWR } = require("swr")
 
 export function SpotifyNowPlaying() {
-  let response = useSWR('/api/spotify', fetcher)
+  let response = useSWR("/api/spotify", fetcher)
   let { songUrl, title, artist } = (response.data as SpotifyNowPlayingData) || {}
 
   return (
@@ -33,7 +33,7 @@ export function SpotifyNowPlaying() {
               href={songUrl}
               target="_blank"
               rel="noopener noreferrer"
-              title={`${title} - ${artist || 'Spotify'}`}
+              title={`${title} - ${artist || "Spotify"}`}
             >
               {title}
             </a>
@@ -41,8 +41,8 @@ export function SpotifyNowPlaying() {
         ) : (
           <p className="font-medium text-gray-200">Not Playing</p>
         )}
-        <span className="mx-2 text-gray-300">{' – '}</span>
-        <p className="max-w-max truncate text-gray-300">{artist || 'Spotify'}</p>
+        <span className="mx-2 text-gray-300">{" – "}</span>
+        <p className="max-w-max truncate text-gray-300">{artist || "Spotify"}</p>
       </div>
     </div>
   )

@@ -1,10 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { __db } from '~/libs/prisma'
+import type { NextApiRequest, NextApiResponse } from "next"
+import { __db } from "~/libs/prisma"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     let slug = req.query.slug.toString()
-    if (req.method === 'POST') {
+    if (req.method === "POST") {
       let newOrUpdatedViews = await __db.views.upsert({
         where: { slug },
         create: {
@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         total: newOrUpdatedViews.count.toString(),
       })
     }
-    if (req.method === 'GET') {
+    if (req.method === "GET") {
       let views = await __db.views.findUnique({
         where: {
           slug,

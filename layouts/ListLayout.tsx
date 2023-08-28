@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import { Pagination } from '~/components/Pagination'
-import { PostListItem } from '~/components/PostListItem'
-import { PostsSearch } from '~/components/PostsSearch'
-import type { ListLayoutProps } from '~/types'
+import { useState } from "react"
+import { Pagination } from "~/components/Pagination"
+import { PostListItem } from "~/components/PostListItem"
+import { PostsSearch } from "~/components/PostsSearch"
+import type { ListLayoutProps } from "~/types"
 
 export function ListLayout(props: ListLayoutProps) {
   let { posts, title, initialDisplayPosts = [], pagination } = props
-  let [searchValue, setSearchValue] = useState('')
+  let [searchValue, setSearchValue] = useState("")
   let filteredBlogPosts = posts.filter((frontMatter) => {
-    let searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+    let searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(" ")
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -30,7 +30,7 @@ export function ListLayout(props: ListLayoutProps) {
           <PostsSearch onChange={setSearchValue} />
         </div>
         <ul className="space-y-10 py-12">
-          {!filteredBlogPosts.length && 'No posts found.'}
+          {!filteredBlogPosts.length && "No posts found."}
           {displayPosts.map((frontMatter) => (
             <PostListItem key={frontMatter.slug} frontMatter={frontMatter} />
           ))}

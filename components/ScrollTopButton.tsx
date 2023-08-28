@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import smoothscroll from 'smoothscroll-polyfill'
+import { useEffect, useState } from "react"
+import smoothscroll from "smoothscroll-polyfill"
 
 export function ScrollTopButton() {
   let [show, setShow] = useState(false)
@@ -11,12 +11,12 @@ export function ScrollTopButton() {
       else setShow(false)
     }
 
-    window.addEventListener('scroll', handleWindowScroll)
-    return () => window.removeEventListener('scroll', handleWindowScroll)
+    window.addEventListener("scroll", handleWindowScroll)
+    return () => window.removeEventListener("scroll", handleWindowScroll)
   }, [])
 
   let handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   return (

@@ -1,10 +1,10 @@
-import clsx from 'clsx'
-import { headerNavLinks } from 'data/headerNavLinks'
-import NextImage from 'next/image'
-import { useRouter } from 'next/router'
-import { AnalyticsLink } from './AnalyticsLink'
-import { Link } from './Link'
-import { ThemeSwitcher } from './ThemeSwitcher'
+import clsx from "clsx"
+import { headerNavLinks } from "data/headerNavLinks"
+import NextImage from "next/image"
+import { useRouter } from "next/router"
+import { AnalyticsLink } from "./AnalyticsLink"
+import { Link } from "./Link"
+import { ThemeSwitcher } from "./ThemeSwitcher"
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   let router = useRouter()
@@ -33,12 +33,12 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                 <Link key={link.title} href={link.href}>
                   <span
                     className={clsx(
-                      'inline-block rounded px-2 py-1 font-medium text-gray-900 dark:text-gray-100 sm:px-3 sm:py-2',
+                      "inline-block rounded px-2 py-1 font-medium text-gray-900 dark:text-gray-100 sm:px-3 sm:py-2",
                       router.pathname.startsWith(link.href)
-                        ? 'bg-gray-200 dark:bg-gray-700'
-                        : 'hover:bg-gray-200 dark:hover:bg-gray-700'
+                        ? "bg-gray-200 dark:bg-gray-700"
+                        : "hover:bg-gray-200 dark:hover:bg-gray-700"
                     )}
-                    data-umami-event={`nav-${link.href.replace('/', '')}`}
+                    data-umami-event={`nav-${link.href.replace("/", "")}`}
                   >
                     {link.title}
                   </span>

@@ -1,4 +1,4 @@
-import type { GithubRepository } from '~/types'
+import type { GithubRepository } from "~/types"
 
 export function GithubRepo({ repo }: { repo: GithubRepository }) {
   let mainLanguage = repo.languages[0]

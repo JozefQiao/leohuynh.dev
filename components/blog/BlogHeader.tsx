@@ -1,7 +1,7 @@
-import type { BlogHeaderProps } from '~/types'
-import { formatDate } from '~/utils/date'
-import { PageTitle } from '../PageTitle'
-import { Twemoji } from '../Twemoji'
+import type { BlogHeaderProps } from "~/types"
+import { formatDate } from "~/utils/date"
+import { PageTitle } from "../PageTitle"
+import { Twemoji } from "../Twemoji"
 
 export function BlogHeader({ title, date, readingTime }: BlogHeaderProps) {
   let createdAt = formatDate(date)
@@ -22,7 +22,7 @@ export function BlogHeader({ title, date, readingTime }: BlogHeaderProps) {
               <span className="mx-2">-</span>
               <div className="flex items-center">
                 <Twemoji emoji="hourglass-not-done" size="" />
-                <span className="ml-1.5">{readingTimeText.replace('min', 'mins')}</span>
+                <span className="ml-1.5">{readingTimeText.replace("min", "mins")}</span>
               </div>
             </dd>
           </div>

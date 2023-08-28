@@ -1,11 +1,11 @@
-import { headerNavLinks } from '~/data/headerNavLinks'
-import { Link } from './Link'
-import clsx from 'clsx'
+import { headerNavLinks } from "~/data/headerNavLinks"
+import { Link } from "./Link"
+import clsx from "clsx"
 
 export function MobileNav({ navShow, onToggleNav }) {
   let className = clsx(
     `sm:hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50 transition-transform transform ease-in-out duration-300`,
-    navShow ? 'translate-x-0' : 'translate-x-full'
+    navShow ? "translate-x-0" : "translate-x-full"
   )
   return (
     <div className={className}>

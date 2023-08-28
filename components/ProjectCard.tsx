@@ -1,9 +1,9 @@
-import useSWR from 'swr'
-import type { GithubRepository, ProjectCardProps } from '~/types'
-import { fetcher } from '~/utils/fetcher'
-import { GithubRepo } from './GithubRepo'
-import { Image } from './Image'
-import { Link } from './Link'
+import useSWR from "swr"
+import type { GithubRepository, ProjectCardProps } from "~/types"
+import { fetcher } from "~/utils/fetcher"
+import { GithubRepo } from "./GithubRepo"
+import { Image } from "./Image"
+import { Link } from "./Link"
 
 export function ProjectCard({ project }: ProjectCardProps) {
   let { title, description, imgSrc, url, repo, builtWith } = project
@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   let href = repository?.url || url
 
   return (
-    <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+    <div className="md p-4 md:w-1/2" style={{ maxWidth: "544px" }}>
       <div className="flex h-full flex-col overflow-hidden rounded-md border border-gray-400 border-opacity-60 hover:border-gray-500 dark:border-gray-600 dark:hover:border-gray-400">
         <Image
           alt={title}
@@ -40,7 +40,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   return (
                     <span key={index} className="font-semibold text-gray-500 dark:text-gray-400">
                       {tool}
-                      {index !== builtWith.length - 1 && ','}
+                      {index !== builtWith.length - 1 && ","}
                     </span>
                   )
                 })}

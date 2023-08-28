@@ -1,12 +1,12 @@
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes"
 import React, {
   useCallback,
   useEffect,
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
-} from 'react'
-import type { ImageLightBoxProps } from '~/types'
-import { Twemoji } from './Twemoji'
+} from "react"
+import type { ImageLightBoxProps } from "~/types"
+import { Twemoji } from "./Twemoji"
 
 export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
   let { theme } = useTheme()
@@ -15,33 +15,33 @@ export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
 
   let handleClose = useCallback(() => {
     setClose(true)
-    document.documentElement.classList.remove('prevent-scroll', 'lightbox-loading')
+    document.documentElement.classList.remove("prevent-scroll", "lightbox-loading")
     setTimeout(() => closeLightbox(), 300)
   }, [closeLightbox])
 
   let handleKeydown = useCallback(
     (e: ReactKeyboardEvent | KeyboardEvent) => {
-      if (e.key === 'Escape') handleClose()
+      if (e.key === "Escape") handleClose()
     },
     [handleClose]
   )
 
   useEffect(() => {
-    document.documentElement.classList.add('prevent-scroll')
-    window.addEventListener('keydown', handleKeydown)
-    return () => window.removeEventListener('keydown', handleKeydown)
+    document.documentElement.classList.add("prevent-scroll")
+    window.addEventListener("keydown", handleKeydown)
+    return () => window.removeEventListener("keydown", handleKeydown)
   }, [handleKeydown])
 
   useEffect(() => {
     if (imgLoaded) {
       setTimeout(() => {
-        document.documentElement.classList.remove('lightbox-loading')
+        document.documentElement.classList.remove("lightbox-loading")
       }, 150)
     }
   }, [imgLoaded])
 
   let style = {
-    '--tw-bg-opacity': theme === 'dark' ? 0.7 : 0.8,
+    "--tw-bg-opacity": theme === "dark" ? 0.7 : 0.8,
     opacity: !close && imgLoaded ? 1 : 0,
   } as React.CSSProperties
 

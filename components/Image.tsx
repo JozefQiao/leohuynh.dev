@@ -1,12 +1,12 @@
-import { BLUR_IMAGE_DATA_URL, LOGO_IMAGE_PATH } from 'constant'
-import NextImage from 'next/image'
-import { useState } from 'react'
-import type { ImageProps } from 'types'
-import { ImageLightbox } from './ImageLightbox'
-import clsx from 'clsx'
+import { BLUR_IMAGE_DATA_URL, LOGO_IMAGE_PATH } from "constant"
+import NextImage from "next/image"
+import { useState } from "react"
+import type { ImageProps } from "types"
+import { ImageLightbox } from "./ImageLightbox"
+import clsx from "clsx"
 
 export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
-  let blurDataURL = ''
+  let blurDataURL = ""
   if (rest.src !== LOGO_IMAGE_PATH) {
     blurDataURL = BLUR_IMAGE_DATA_URL
   }
@@ -14,21 +14,21 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
   let [openLightbox, setOpenLightbox] = useState(false)
   let handleOpenLightbox = () => {
     if (!shouldOpenLightbox) return
-    document.documentElement.classList.add('lightbox-loading')
+    document.documentElement.classList.add("lightbox-loading")
     setOpenLightbox(true)
   }
-  let isThumb = rest.id === 'thumbnail-image'
+  let isThumb = rest.id === "thumbnail-image"
   let className = clsx(
     `flex justify-center`,
-    shouldOpenLightbox && 'cursor-zoom-in',
-    isThumb && 'thumbnail-image'
+    shouldOpenLightbox && "cursor-zoom-in",
+    isThumb && "thumbnail-image"
   )
 
   return (
     <>
       <div
         className={className}
-        data-umami-event={isThumb ? 'view-post-thumbnail' : 'view-image-in-lightbox'}
+        data-umami-event={isThumb ? "view-post-thumbnail" : "view-image-in-lightbox"}
       >
         <NextImage {...rest} blurDataURL={blurDataURL} onClick={handleOpenLightbox} />
       </div>

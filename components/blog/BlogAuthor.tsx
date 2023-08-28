@@ -1,6 +1,6 @@
-import type { AuthorFrontMatter } from '~/types'
-import { Link } from '../Link'
-import { Image } from '../Image'
+import type { AuthorFrontMatter } from "~/types"
+import { Link } from "../Link"
+import { Image } from "../Image"
 
 export function AuthorDetails({ authorDetails }: { authorDetails: AuthorFrontMatter[] }) {
   return (
@@ -35,7 +35,7 @@ export function Author({ author }: { author: AuthorFrontMatter }) {
                 href={author.github}
                 className="text-primary-500 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
               >
-                {author.github.replace('https://github.com/', '@')}
+                {author.github.replace("https://github.com/", "@")}
               </Link>
             </>
           )}

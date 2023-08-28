@@ -1,6 +1,6 @@
-import { siteMetadata } from '~/data/siteMetadata'
-import { DevIcon } from './DevIcon'
-import { Link } from './Link'
+import { siteMetadata } from "~/data/siteMetadata"
+import { DevIcon } from "./DevIcon"
+import { Link } from "./Link"
 
 export function BuiltWith() {
   return (

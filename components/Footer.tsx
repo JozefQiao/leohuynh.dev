@@ -1,5 +1,5 @@
-import { siteMetadata } from '~/data/siteMetadata'
-import { BuiltWith } from './BuiltWith'
+import { siteMetadata } from "~/data/siteMetadata"
+import { BuiltWith } from "./BuiltWith"
 
 export function Footer() {
   return (

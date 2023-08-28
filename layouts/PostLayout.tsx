@@ -1,14 +1,14 @@
-import { BackToPosts } from '~/components/blog/BackToPosts'
-import { AuthorDetails } from '~/components/blog/BlogAuthor'
-import { BlogHeader } from '~/components/blog/BlogHeader'
-import { BlogTags } from '~/components/blog/BlogTags'
-import { Comments } from '~/components/comments'
-import { ScrollTopButton } from '~/components/ScrollTopButton'
-import { SectionContainer } from '~/components/SectionContainer'
-import { BlogSeo } from '~/components/SEO'
-import { SocialButtons } from '~/components/SocialButtons'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { PostLayoutProps } from '~/types'
+import { BackToPosts } from "~/components/blog/BackToPosts"
+import { AuthorDetails } from "~/components/blog/BlogAuthor"
+import { BlogHeader } from "~/components/blog/BlogHeader"
+import { BlogTags } from "~/components/blog/BlogTags"
+import { Comments } from "~/components/comments"
+import { ScrollTopButton } from "~/components/ScrollTopButton"
+import { SectionContainer } from "~/components/SectionContainer"
+import { BlogSeo } from "~/components/SEO"
+import { SocialButtons } from "~/components/SocialButtons"
+import { siteMetadata } from "~/data/siteMetadata"
+import type { PostLayoutProps } from "~/types"
 
 export function PostLayout(props: PostLayoutProps) {
   let { frontMatter, authorDetails, page, children, commentConfig } = props
@@ -24,7 +24,7 @@ export function PostLayout(props: PostLayoutProps) {
           <BlogHeader title={title} date={date} readingTime={readingTime} />
           <div
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
-            style={{ gridTemplateRows: 'auto 1fr' }}
+            style={{ gridTemplateRows: "auto 1fr" }}
           >
             <div>
               <div className="hidden border-b border-gray-200 py-4 dark:border-gray-700 xl:block xl:py-8">

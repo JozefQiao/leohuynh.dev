@@ -1,12 +1,12 @@
-import { PageSeo } from '~/components/SEO'
-import { POSTS_PER_PAGE } from '~/constant'
-import { siteMetadata } from '~/data/siteMetadata'
-import { ListLayout } from '~/layouts/ListLayout'
-import { getAllFilesFrontMatter } from '~/libs/mdx'
-import type { BlogListProps } from '~/types'
+import { PageSeo } from "~/components/SEO"
+import { POSTS_PER_PAGE } from "~/constant"
+import { siteMetadata } from "~/data/siteMetadata"
+import { ListLayout } from "~/layouts/ListLayout"
+import { getAllFilesFrontMatter } from "~/libs/mdx"
+import type { BlogListProps } from "~/types"
 
 export function getStaticProps() {
-  let posts = getAllFilesFrontMatter('blog')
+  let posts = getAllFilesFrontMatter("blog")
   let initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   let pagination = {
     currentPage: 1,

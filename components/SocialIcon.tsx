@@ -1,11 +1,11 @@
-import type { AnchorHTMLAttributes } from 'react'
-import type { SocialIconProps } from '~/types'
-import Facebook from '~/icons/facebook.svg'
-import Github from '~/icons/github.svg'
-import Linkedin from '~/icons/linkedin.svg'
-import Mail from '~/icons/mail.svg'
-import Twitter from '~/icons/twitter.svg'
-import Youtube from '~/icons/youtube.svg'
+import type { AnchorHTMLAttributes } from "react"
+import type { SocialIconProps } from "~/types"
+import Facebook from "~/icons/facebook.svg"
+import Github from "~/icons/github.svg"
+import Linkedin from "~/icons/linkedin.svg"
+import Mail from "~/icons/mail.svg"
+import Twitter from "~/icons/twitter.svg"
+import Youtube from "~/icons/youtube.svg"
 
 export let SocialIconsMap = {
   Mail,
@@ -20,8 +20,8 @@ export function SocialIcon({ name, href }: SocialIconProps) {
   let SocialSvg = SocialIconsMap[name]
   let attrs: AnchorHTMLAttributes<HTMLAnchorElement> = {
     href,
-    target: name !== 'Mail' ? '_blank' : '_self',
-    rel: 'noopener noreferrer',
+    target: name !== "Mail" ? "_blank" : "_self",
+    rel: "noopener noreferrer",
   }
 
   return (

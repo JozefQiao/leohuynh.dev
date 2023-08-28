@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-import clsx from 'clsx'
+import React, { useState, useRef } from "react"
+import clsx from "clsx"
 
 export function Pre({ children }: { children: React.ReactNode }) {
   let textInput = useRef(null)
@@ -14,13 +14,13 @@ export function Pre({ children }: { children: React.ReactNode }) {
   let onCopy = () => {
     setCopied(true)
     let { innerText } = textInput.current
-    innerText = innerText.replace(/(\$ |copy)/g, ' ')
+    innerText = innerText.replace(/(\$ |copy)/g, " ")
     navigator.clipboard.writeText(innerText)
     setTimeout(() => setCopied(false), 2000)
   }
   let className = clsx(
     `absolute z-10 right-2 top-2 w-8 h-8 p-1 rounded border-2 bg-gray-700 dark:bg-gray-800`,
-    copied ? 'focus:outline-none focus:border-green-400 border-green-400' : 'border-gray-300'
+    copied ? "focus:outline-none focus:border-green-400 border-green-400" : "border-gray-300"
   )
   return (
     <div ref={textInput} onMouseEnter={onEnter} onMouseLeave={onExit} className="relative">
@@ -32,7 +32,7 @@ export function Pre({ children }: { children: React.ReactNode }) {
               viewBox="0 0 24 24"
               stroke="currentColor"
               fill="none"
-              className={copied ? 'text-green-400' : 'text-gray-300'}
+              className={copied ? "text-green-400" : "text-gray-300"}
             >
               {copied ? (
                 <path

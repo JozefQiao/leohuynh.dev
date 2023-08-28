@@ -1,12 +1,12 @@
-import React from 'react'
-import { ProfileCard } from '~/components/ProfileCard'
-import { PageSeo } from '~/components/SEO'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { AuthorLayoutProps } from '~/types'
+import React from "react"
+import { ProfileCard } from "~/components/ProfileCard"
+import { PageSeo } from "~/components/SEO"
+import { siteMetadata } from "~/data/siteMetadata"
+import type { AuthorLayoutProps } from "~/types"
 
 export function AuthorLayout({ children }: AuthorLayoutProps) {
-  let title = 'About'
-  let description = 'More about me and this blog'
+  let title = "About"
+  let description = "More about me and this blog"
 
   return (
     <>

@@ -1,6 +1,6 @@
-import type { CommentConfigType } from './components'
-import type { AuthorFrontMatter, BlogFrontMatter, MdxFileData } from './mdx'
-import type { PaginationType } from './server'
+import type { CommentConfigType } from "./components"
+import type { AuthorFrontMatter, BlogFrontMatter, MdxFileData } from "./mdx"
+import type { PaginationType } from "./server"
 
 export interface SnippetProps {
   snippet: MdxFileData

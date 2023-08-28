@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { ProfileCardInfo } from './ProfileInfo'
-import { SpotifyNowPlaying } from './SpotifyNowPlaying'
+import Image from "next/image"
+import React, { useCallback, useEffect, useRef, useState } from "react"
+import { ProfileCardInfo } from "./ProfileInfo"
+import { SpotifyNowPlaying } from "./SpotifyNowPlaying"
 
 export function ProfileCard() {
   let ref = useRef(null)
@@ -29,25 +29,25 @@ export function ProfileCard() {
   }, [])
 
   let onMouseLeave = useCallback(() => {
-    setStyle({ transform: 'rotateX(0deg) rotateY(0deg)' })
+    setStyle({ transform: "rotateX(0deg) rotateY(0deg)" })
   }, [])
 
   useEffect(() => {
     let { current } = ref
     if (!current) return
-    current.addEventListener('mousemove', onMouseMove)
-    current.addEventListener('mouseleave', onMouseLeave)
+    current.addEventListener("mousemove", onMouseMove)
+    current.addEventListener("mouseleave", onMouseLeave)
     return () => {
       if (!current) return
-      current.removeEventListener('mousemove', onMouseMove)
-      current.removeEventListener('mouseleave', onMouseLeave)
+      current.removeEventListener("mousemove", onMouseMove)
+      current.removeEventListener("mouseleave", onMouseLeave)
     }
   }, [onMouseLeave, onMouseMove])
 
   return (
     <div
       className="z-10 mb-8 scale-100 transition-all duration-200 ease-out hover:z-50 xl:mb-0 xl:hover:scale-[1.15]"
-      style={{ perspective: '600px' }}
+      style={{ perspective: "600px" }}
       ref={ref}
     >
       <div
@@ -55,18 +55,17 @@ export function ProfileCard() {
         className="flex flex-col overflow-hidden bg-white shadow-cyan-100/50 transition-all duration-200 ease-out dark:bg-dark dark:shadow-cyan-700/50 xl:rounded-lg xl:shadow-lg"
       >
         <Image
-          src={'/static/images/logo.jpg'}
+          src={"/static/images/logo.jpg"}
           alt="avatar"
           width={550}
           height={350}
           style={{
-            objectPosition: '50% 16%',
-            objectFit: 'cover',
-            width: '100%',
-            aspectRatio: '17/11',
+            objectPosition: "50% 16%",
+            objectFit: "cover",
+            width: "100%",
+            aspectRatio: "17/11",
           }}
         />
-        <SpotifyNowPlaying />
         <ProfileCardInfo />
         <span className="h-1.5 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
       </div>

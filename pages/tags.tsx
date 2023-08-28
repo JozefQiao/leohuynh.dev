@@ -1,13 +1,13 @@
-import { Link } from '~/components/Link'
-import { PageSeo } from '~/components/SEO'
-import { Tag } from '~/components/Tag'
-import { siteMetadata } from '~/data/siteMetadata'
-import { getAllTags } from '~/libs/tags'
-import type { TagsCount } from '~/types'
-import { kebabCase } from '~/utils/kebab-case'
+import { Link } from "~/components/Link"
+import { PageSeo } from "~/components/SEO"
+import { Tag } from "~/components/Tag"
+import { siteMetadata } from "~/data/siteMetadata"
+import { getAllTags } from "~/libs/tags"
+import type { TagsCount } from "~/types"
+import { kebabCase } from "~/utils/kebab-case"
 
 export function getStaticProps() {
-  let tags = getAllTags('blog')
+  let tags = getAllTags("blog")
   return { props: { tags } }
 }
 
@@ -24,7 +24,7 @@ export default function Tags({ tags }: { tags: TagsCount }) {
           </h1>
         </div>
         <div className="flex max-w-lg flex-wrap">
-          {Object.keys(tags).length === 0 && 'No tags found.'}
+          {Object.keys(tags).length === 0 && "No tags found."}
           {sortedTags.map((tag) => {
             return (
               <div key={tag} className="mb-2 mr-5 mt-2">

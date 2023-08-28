@@ -1,4 +1,4 @@
-import type { PageTitleProps } from '~/types'
+import type { PageTitleProps } from "~/types"
 
 export function PageTitle({ children }: PageTitleProps) {
   return (

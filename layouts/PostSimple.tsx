@@ -1,13 +1,13 @@
-import { BlogMeta } from '~/components/blog/BlogMeta'
-import { BlogTags } from '~/components/blog/BlogTags'
-import { Comments } from '~/components/comments'
-import { PageTitle } from '~/components/PageTitle'
-import { ScrollTopButton } from '~/components/ScrollTopButton'
-import { SectionContainer } from '~/components/SectionContainer'
-import { BlogSeo } from '~/components/SEO'
-import { SocialButtons } from '~/components/SocialButtons'
-import { siteMetadata } from '~/data/siteMetadata'
-import type { PostSimpleLayoutProps } from '~/types'
+import { BlogMeta } from "~/components/blog/BlogMeta"
+import { BlogTags } from "~/components/blog/BlogTags"
+import { Comments } from "~/components/comments"
+import { PageTitle } from "~/components/PageTitle"
+import { ScrollTopButton } from "~/components/ScrollTopButton"
+import { SectionContainer } from "~/components/SectionContainer"
+import { BlogSeo } from "~/components/SEO"
+import { SocialButtons } from "~/components/SocialButtons"
+import { siteMetadata } from "~/data/siteMetadata"
+import type { PostSimpleLayoutProps } from "~/types"
 
 export function PostSimple(props: PostSimpleLayoutProps) {
   let { frontMatter, type, children, authorDetails, commentConfig } = props
@@ -36,7 +36,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
               </dl>
             </div>
           </header>
-          <div className="pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
+          <div className="pb-8" style={{ gridTemplateRows: "auto 1fr" }}>
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose prose-lg max-w-none pb-8 dark:prose-dark md:prose-xl">
                 {children}

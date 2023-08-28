@@ -1,5 +1,5 @@
-import type { PaginationType } from '~/types'
-import { Link } from './Link'
+import type { PaginationType } from "~/types"
+import { Link } from "./Link"
 
 export function Pagination({ totalPages, currentPage }: PaginationType) {
   let hasPrevPage = currentPage - 1 > 0

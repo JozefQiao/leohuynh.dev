@@ -1,12 +1,12 @@
-import { PageSeo } from 'components/SEO'
-import { ProjectCard } from '~/components/ProjectCard'
-import { projectsData } from '~/data/projectsData'
-import { siteMetadata } from '~/data/siteMetadata'
+import { PageSeo } from "components/SEO"
+import { ProjectCard } from "~/components/ProjectCard"
+import { projectsData } from "~/data/projectsData"
+import { siteMetadata } from "~/data/siteMetadata"
 
 export default function Projects() {
-  let workProjects = projectsData.filter(({ type }) => type === 'work')
-  let sideProjects = projectsData.filter(({ type }) => type === 'self')
-  let description = 'My open-source side projects and stuff that I built with my colleagues at work'
+  let workProjects = projectsData.filter(({ type }) => type === "work")
+  let sideProjects = projectsData.filter(({ type }) => type === "self")
+  let description = "My open-source side projects and stuff that I built with my colleagues at work"
 
   return (
     <>
